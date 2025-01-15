@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "concurrently \"npm run server\" \"npm run dev\"",
-    "server": "json-server --watch db.json --port 3000"
+    "server": "json-server --watch db.json --port 3000 --cors"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -18,8 +18,8 @@
     "@mui/icons-material": "^6.3.1",
     "@mui/material": "^6.3.1",
     "axios": "^1.7.9",
-    "json-server": "^1.0.0-beta.3",
     "concurrently": "^7.0.0",
+    "json-server": "^1.0.0-beta.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.2",

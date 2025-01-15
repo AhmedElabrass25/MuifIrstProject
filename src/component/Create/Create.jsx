@@ -27,22 +27,22 @@ const Create = ({ drawerWidth }) => {
   } = useForm();
 
   const onSubmit = async ({ title, price }) => {
-    price = Number(price); // convert price to number.
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // Function to send data(fetch)>>>>>>>
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-    let res = await fetch("http://localhost:3000/myData", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ title, price }),
-    });
-    if (res) {
+    try {
+      const res = await fetch("http://localhost:3000/myData", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, price: Number(price) }),
+      });
+      if (!res.ok) throw new Error("Failed to submit data");
+      navigate("/");
       titleInput.current.value = "";
       priceInput.current.value = "";
-      navigate("/");
+    } catch (error) {
+      console.error(error);
+      alert("Error submitting data. Please try again.");
     }
   };
   //>>>>>>>>>>>>>>>>> React Hook Form >>>>>.
