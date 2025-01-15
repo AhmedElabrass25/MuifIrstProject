@@ -13,7 +13,7 @@ const Home = ({ drawerWidth }) => {
   //  Function to get data(fetch)>>>>>>>
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   async function getData() {
-    let res = await fetch("http://localhost:3000/myData");
+    let res = await fetch("http://localhost:8000/myData");
     if (res.ok) {
       const data = await res.json();
       setAllData(data);
@@ -31,7 +31,7 @@ const Home = ({ drawerWidth }) => {
   //  Function to delete item (fetch)>>>>>>>
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   async function deleteItem(id) {
-    let res = await fetch(`http://localhost:3000/myData/${id}`, {
+    let res = await fetch(`http://localhost:8000/myData/${id}`, {
       method: "DELETE",
     });
     if (res.ok) {

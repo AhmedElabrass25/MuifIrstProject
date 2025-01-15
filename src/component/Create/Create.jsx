@@ -14,8 +14,6 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 const Create = ({ drawerWidth }) => {
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState(0);
   let titleInput = useRef();
   let priceInput = useRef();
   //>>>>>>>>>>>>>>>>> React Hook Form >>>>>.
@@ -31,7 +29,7 @@ const Create = ({ drawerWidth }) => {
     // Function to send data(fetch)>>>>>>>
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     try {
-      const res = await fetch("http://localhost:3000/myData", {
+      const res = await fetch("http://localhost:8000/myData", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, price: Number(price) }),
