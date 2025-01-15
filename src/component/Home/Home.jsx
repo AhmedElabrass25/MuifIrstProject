@@ -7,7 +7,8 @@ import ForwardIcon from "@mui/icons-material/Forward";
 const Home = ({ drawerWidth }) => {
   const [allData, setAllData] = useState([]);
   const [totalPrice, setTotalPrice] = useState("");
-  console.log(allData);
+
+  // console.log(allData);
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   //  Function to get data(fetch)>>>>>>>
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
